@@ -44,4 +44,5 @@ def main():
             print(f'The password \'{pas}\' is bad, because it is been pwned for {count} times')
 
 
-main()
+if __name__ == '__main__':
+    main()
