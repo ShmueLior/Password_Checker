@@ -36,12 +36,12 @@ def main():
     config_object.read('./config/config.ini')
     passwords = list(config_object['PASSWORD']['password'].split(','))
     for password in passwords:
-        count = pwned_api_check(password)
+        pas = password.strip()
+        count = pwned_api_check(pas)
         if count == -1:
-            print(f'The password \'{password}\' is all good!')
+            print(f'The password \'{pas}\' is all good!')
         else:
-            print(f'The password \'{password}\' is bad, because it is been pwned for {count} times')
-
+            print(f'The password \'{pas}\' is bad, because it is been pwned for {count} times')
 
 
 main()
